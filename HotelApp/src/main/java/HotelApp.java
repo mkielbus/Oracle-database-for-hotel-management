@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 import oracle.jdbc.pool.OracleDataSource;
+import oracle.jdbc.proxy.annotation.Pre;
 
 
 public class HotelApp {
@@ -60,7 +61,7 @@ public class HotelApp {
     public void mainWindow() throws SQLException {
         while(true) {
             System.out.println("--------------------------");
-            System.out.println("Wybierz polecenie: \nWyświetl gości: 1 \nDodaj gościa: 2 \nOblicz koszt pobytu: 3 \nDodaj dodatkową usługę: 4");
+            System.out.println("Wybierz polecenie: \nWyświetl gości: 1 \nDodaj gościa: 2 \nOblicz koszt pobytu: 3 \nDodaj dodatkową usługę: 4 \nWyświetl roczny budżet: 5 \nDodaj ocenę hotelowi: 6 \nWyświetl listę pracowników: 7, \nWymelduj gościa: 8");
             Scanner in = new Scanner(System.in);
             String request = in.nextLine();
             System.out.println("Wybrałeś polecenie " + request);
@@ -76,8 +77,71 @@ public class HotelApp {
                     break;
                 case "4":
                     this.addExtraService();
+                    break;
+                case "5":
+                    this.showAnnualBudget();
+                    break;
+                case "6":
+                    this.addReview();
+                    break;
+                case "7":
+                    this.showEmployees();
+                    break;
+                case "8":
+                    this.deleteGuest();
+                    break;
+
             }
         }
+    }
+
+    private void deleteGuest() throws SQLException{
+        PreparedStatement preparedStatement = conn.prepareStatement("Delete from current_guests where guest_id = ?");
+        String guest_id = this.getIdGuest();
+        preparedStatement.setString(1, guest_id);
+        int executedUpdate = preparedStatement.executeUpdate();
+    }
+
+    private void showEmployees() throws SQLException {
+        Statement statement = conn.createStatement();
+        ResultSet rs = statement.executeQuery("select e.name, e.surname, d.name as department, es.shift_date  from employees e join departments d using(department_id) join emp_schedule es on(e.employee_id = es.employee_id)");
+        while(rs.next()){
+            System.out.println("Imię i nazwisko: " + rs.getString(1) + " " + rs.getString(2) + ", departament: " + rs.getString(3) + ", zmiana: " + rs.getString(4));
+        }
+    }
+
+    private void addReview() throws SQLException{
+        Statement statement = conn.createStatement();
+        PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO reviews VALUES (?, ?, ?)");
+        Scanner sc = new Scanner(System.in);
+        String guest_id = this.getIdGuest();
+        System.out.println("Wystaw ocenę w skali 1-5");
+        String review = sc.nextLine();
+        ResultSet rs = statement.executeQuery("select max(review_id) + 1 from reviews");
+        String review_id = "";
+        while (rs.next()) {
+            review_id = rs.getString(1);
+        }
+        preparedStatement.setString(1, review_id);
+        preparedStatement.setString(2, review);
+        preparedStatement.setString(3, guest_id);
+        int executedUpdate = preparedStatement.executeUpdate();
+        System.out.println("Dodano ocenę.");
+
+    }
+
+    private void showAnnualBudget() throws SQLException{
+        PreparedStatement preparedStatement = conn.prepareStatement("select budget from budget b where extract(year from b.year) = ?");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Wpisz rok: (od 2020)");
+        String year = sc.nextLine();
+        preparedStatement.setString(1, year);
+        ResultSet rs = preparedStatement.executeQuery();
+        while(rs.next()){
+            System.out.println("Roczny budżet za rok "+ year + " wynosi: " + rs.getString(1));
+        }
+
+
     }
 
     private String getIdGuest() throws SQLException{

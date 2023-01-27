@@ -11,15 +11,15 @@ import oracle.jdbc.proxy.annotation.Pre;
 
 
 public class HotelApp {
-    Connection conn; // obiekt Connection do nawiazania polaczenia z baza danych
+    Connection conn;
 
     public static void main(String[] args) {
         HotelApp app = new HotelApp();
 
         try {
-            app.setConnection(); // otwarcie polaczenia z BD
+            app.setConnection();
             app.mainWindow();
-            app.closeConnection();// zamkniecie polaczenia z BD
+            app.closeConnection();
         }
         catch (SQLException eSQL) {
             System.out.println("Blad przetwarzania SQL " + eSQL.getMessage());
@@ -29,7 +29,7 @@ public class HotelApp {
         }
     }
 
-    public void setConnection() throws SQLException, IOException { // metoda nawiazuje polaczenie
+    public void setConnection() throws SQLException, IOException {
         String host = "ora4.ii.pw.edu.pl";
         String username = "z80";
         String password = "yh4w5t";
@@ -41,11 +41,11 @@ public class HotelApp {
                 username, password, host, port, serviceName);
 
         System.out.println (connectionString);
-        OracleDataSource ods; // nowe zrodlo danych (klasa z drivera  Oracle)
+        OracleDataSource ods;
         ods = new OracleDataSource();
 
         ods.setURL(connectionString);
-        conn = ods.getConnection(); // nawiazujemy polaczenie z BD
+        conn = ods.getConnection();
 
         DatabaseMetaData meta = conn.getMetaData();
 
@@ -53,7 +53,7 @@ public class HotelApp {
         System.out.println("Baza danych:" + " " + meta.getDatabaseProductVersion());
     }
 
-    public void closeConnection() throws SQLException { // zamkniecie polaczenia
+    public void closeConnection() throws SQLException {
         conn.close();
         System.out.println("Polaczenie z baza zamkniete poprawnie.");
     }
@@ -61,7 +61,7 @@ public class HotelApp {
     public void mainWindow() throws SQLException {
         while(true) {
             System.out.println("--------------------------");
-            System.out.println("Wybierz polecenie: \nWyświetl gości: 1 \nDodaj gościa: 2 \nOblicz koszt pobytu: 3 \nDodaj dodatkową usługę: 4 \nWyświetl roczny budżet: 5 \nDodaj ocenę hotelowi: 6 \nWyświetl listę pracowników: 7, \nWymelduj gościa: 8");
+            System.out.println("Wybierz polecenie wpisując odpowiednią cyfrę: \nWyświetl gości: 1 \nDodaj gościa: 2 \nOblicz koszt pobytu: 3 \nDodaj dodatkową usługę: 4 \nWyświetl roczny budżet: 5 \nDodaj ocenę hotelowi: 6 \nWyświetl listę pracowników: 7, \nWymelduj gościa: 8");
             Scanner in = new Scanner(System.in);
             String request = in.nextLine();
             System.out.println("Wybrałeś polecenie " + request);
@@ -97,9 +97,17 @@ public class HotelApp {
 
     private void deleteGuest() throws SQLException{
         PreparedStatement preparedStatement = conn.prepareStatement("Delete from current_guests where guest_id = ?");
+        PreparedStatement preparedStatement1 = conn.prepareStatement("Delete from reservations where guest_id = ?");
+        PreparedStatement preparedStatement2 = conn.prepareStatement("Delete from guest_service where guest_id = ?");
         String guest_id = this.getIdGuest();
         preparedStatement.setString(1, guest_id);
+        preparedStatement1.setString(1, guest_id);
+        preparedStatement2.setString(1, guest_id);
+        int executedUpdate1 = preparedStatement1.executeUpdate();
+        int executedUpdate2 = preparedStatement2.executeUpdate();
         int executedUpdate = preparedStatement.executeUpdate();
+        System.out.println("Wymeldowano.");
+
     }
 
     private void showEmployees() throws SQLException {
@@ -237,10 +245,10 @@ public class HotelApp {
 
     public void showGuests() throws SQLException {
         Statement statement = conn.createStatement();
-        ResultSet rs = statement.executeQuery("SELECT * FROM current_guests");
+        ResultSet rs = statement.executeQuery("SELECT guest_id, name, surname, room_id FROM current_guests join reservations using(guest_id)");
         System.out.println("Lista gości:");
         while(rs.next()){
-            System.out.println(rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3));
+            System.out.println(rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3) + ", numer pokoju:  " + rs.getString(4));
         }
     }
 

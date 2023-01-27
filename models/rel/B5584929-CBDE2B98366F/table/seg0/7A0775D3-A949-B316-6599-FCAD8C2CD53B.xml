@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7A0775D3-A949-B316-6599-FCAD8C2CD53B" name="rooms">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:16:25 UTC</createdTime>
+<generatorID>8E2670A1-2610-4B6A-7E9A-C46FE6B9CBD7</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="room_id" id="0A233DFE-D4BF-CCD0-E3A6-FD2FC391E8BE">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:16:25 UTC</createdTime>
+<generatorID>7041A35C-E7FF-1A3D-C3D1-8B980E7CEBC2</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="people_capacity" id="E67D3435-1DB7-FE9F-FE56-93F63C792DD9">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:16:25 UTC</createdTime>
+<generatorID>809D3E5B-336C-6C19-A446-FD86A5CF46BD</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cost" id="000C9E2E-5B97-4BF5-8E52-C40BA2495E30">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:16:25 UTC</createdTime>
+<generatorID>B660805A-0B28-4F70-33D7-C67E098FEE2E</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="occupied" id="1FD93A37-E925-FF01-DA71-9B9D7642C59E">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:16:25 UTC</createdTime>
+<generatorID>B2F98E83-6B28-61DD-9D20-E83CF1F5809D</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FA73E615-5FA2-A62F-174D-6F8181821C72" name="rooms_PK">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:16:25 UTC</createdTime>
+<generatorID>20A67575-6E9B-4AEB-2159-A4A5C9A525A7</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0A233DFE-D4BF-CCD0-E3A6-FD2FC391E8BE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

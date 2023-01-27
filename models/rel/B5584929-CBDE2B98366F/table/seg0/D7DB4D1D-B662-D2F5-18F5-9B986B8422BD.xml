@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D7DB4D1D-B662-D2F5-18F5-9B986B8422BD" name="guest_history">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:16:25 UTC</createdTime>
+<generatorID>4B4D9E8F-042F-E1D5-DD8D-5B1B6B071E41</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="guest_id" id="D10A2596-BB1A-6410-9FE6-9D7767F347DB">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:16:25 UTC</createdTime>
+<generatorID>05377ED6-1453-8530-D1FA-CB7DE47954D0</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="67684BDE-1A68-EF00-3A6E-81F7CE2F39D1">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:16:25 UTC</createdTime>
+<generatorID>138C24B6-C0E9-30AB-0606-7AD95F02EE31</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="surname" id="14FAE28C-BFE8-335A-1D4C-6CC4C1C602F6">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:16:25 UTC</createdTime>
+<generatorID>CCF80FA7-93A1-56B6-5E81-5412D515F478</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="08E7876C-D06F-5C31-1BA0-05F3AAE2B699" name="guest_history_PK">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:16:25 UTC</createdTime>
+<generatorID>C9404C6C-3E4B-BCB4-D66C-96D4464873DC</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D10A2596-BB1A-6410-9FE6-9D7767F347DB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

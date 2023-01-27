@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="guest_service" directorySegmentName="seg_0" id="0F56737A-628D-A2B4-4EB6-FAFA560C0B63">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 15:40:31 UTC</createdTime>
+<ownerDesignName>models</ownerDesignName>
+<engineerTo>
+<item key="B5584929-5623-0935-8B47-CBDE2B98366F" value="true"/>
+</engineerTo>
+<sourcePk>F1B0C5ED-6459-BC45-F32D-DC4F1835B70A</sourcePk>
+<targetPk>2BFD84AB-FC63-CF20-B663-34769B7D9427</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>A6CA7510-A775-9AC7-78CA-B48F25A5D5DE</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>F97B123A-A16C-7A63-31C2-B6817B05E844</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="quantitiy" id="65525669-B7BC-5FE7-45BB-843EC4507D65">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 15:47:23 UTC</createdTime>
+<generatorID>52023A56-4822-D111-2E3D-C8D8F5782C12</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<engineerTo>
+<item key="B5584929-5623-0935-8B47-CBDE2B98366F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>

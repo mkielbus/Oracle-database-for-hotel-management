@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1C239EB7-A741-991B-0E72-5D1C1296CD5D" name="reservation_history">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:16:25 UTC</createdTime>
+<generatorID>3048E02B-BFBB-B80B-CD8F-45F783E36BD5</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="reservation_id" id="54AE068A-D457-63E9-6171-7716B4E0C678">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:16:25 UTC</createdTime>
+<generatorID>628E1312-7168-8D65-A93A-270CCC825163</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="guest_id" id="533ADB92-AF2B-3827-05A6-421C1BDCE2FA">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:16:25 UTC</createdTime>
+<generatorID>AD090B57-FA75-F692-6C7A-868E163F0722</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="room_id" id="D7836306-3D75-53DF-7EF8-44780D50E199">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:16:25 UTC</createdTime>
+<generatorID>3C4E37CB-26C4-C941-0D10-969E183676D2</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="stay_length" id="9A64A814-B348-EBF3-E9A1-F4E1F1B6FD9E">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:16:25 UTC</createdTime>
+<generatorID>29307DE9-525B-1E41-9EF2-0041E83FB1EF</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="73267B0A-0263-12F0-EA61-31644C59EFC0" name="reservation_history_PK">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:16:25 UTC</createdTime>
+<generatorID>6B6508A6-E6A0-6A74-B235-B99BCB75AE02</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="54AE068A-D457-63E9-6171-7716B4E0C678"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

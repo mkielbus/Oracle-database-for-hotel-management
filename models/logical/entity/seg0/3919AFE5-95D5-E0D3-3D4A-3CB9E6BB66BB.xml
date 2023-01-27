@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3919AFE5-95D5-E0D3-3D4A-3CB9E6BB66BB" name="budget">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:10:48 UTC</createdTime>
+<ownerDesignName>models</ownerDesignName>
+<engineerTo>
+<item key="B5584929-5623-0935-8B47-CBDE2B98366F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="budget id" id="B0843F5E-1B32-2A3A-9A71-F83446B20670">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:10:55 UTC</createdTime>
+<ownerDesignName>models</ownerDesignName>
+<engineerTo>
+<item key="B5584929-5623-0935-8B47-CBDE2B98366F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="year" id="273F10CB-1F4C-093A-8D9D-07E863033E8A">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:11:04 UTC</createdTime>
+<ownerDesignName>models</ownerDesignName>
+<engineerTo>
+<item key="B5584929-5623-0935-8B47-CBDE2B98366F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="budget" id="028C3C5A-75C2-46CF-4CA3-2F1B28F516A2">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:11:16 UTC</createdTime>
+<ownerDesignName>models</ownerDesignName>
+<engineerTo>
+<item key="B5584929-5623-0935-8B47-CBDE2B98366F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="883A3143-EE6F-6A71-F2C7-DA66DF8C75AF" name="budget PK">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:11:29 UTC</createdTime>
+<ownerDesignName>models</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="B5584929-5623-0935-8B47-CBDE2B98366F" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>B0843F5E-1B32-2A3A-9A71-F83446B20670</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

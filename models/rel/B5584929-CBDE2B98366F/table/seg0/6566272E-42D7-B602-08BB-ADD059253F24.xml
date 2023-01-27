@@ -1,0 +1,98 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6566272E-42D7-B602-08BB-ADD059253F24" name="reservations">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 15:43:51 UTC</createdTime>
+<ownerDesignName>models</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="reservation_id" id="BE54B024-0BD9-36B7-229C-FA074504AA23">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 15:46:15 UTC</createdTime>
+<ownerDesignName>models</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="room_id" id="625CF508-3EB8-2108-D17C-2F210020C753">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 15:43:51 UTC</createdTime>
+<ownerDesignName>models</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FEAC05E7-6006-482D-B931-D3C7936F12B6" referredColumn="0A233DFE-D4BF-CCD0-E3A6-FD2FC391E8BE"/>
+</associations>
+</Column>
+<Column name="guest_id" id="C374FD47-4917-9142-00FC-A21C2AE73C98">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 15:43:51 UTC</createdTime>
+<ownerDesignName>models</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E7BB295C-8814-23FE-E4DF-2E64BD62CF11" referredColumn="3AE14811-DF6F-0107-312D-FD318BE650F7"/>
+</associations>
+</Column>
+<Column name="stay_length" id="B8E54EB5-4944-9BB1-3841-E350C0887560">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 15:46:39 UTC</createdTime>
+<ownerDesignName>models</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+<isDependOnFK_AsMandatory>true</isDependOnFK_AsMandatory>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="18C1DFFA-3842-2E27-BAA8-B258D801764D" name="reservations_PK">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 15:43:51 UTC</createdTime>
+<ownerDesignName>models</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="625CF508-3EB8-2108-D17C-2F210020C753"/>
+<colUsage columnID="C374FD47-4917-9142-00FC-A21C2AE73C98"/>
+<colUsage columnID="BE54B024-0BD9-36B7-229C-FA074504AA23"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D4AB2CDB-3C15-E179-3067-57187F555ADA" name="rooms_FK">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 15:43:51 UTC</createdTime>
+<generatorID>1719A260-343A-790C-2BC9-C73DCA675EE0</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="625CF508-3EB8-2108-D17C-2F210020C753"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EEF880F3-474A-A2B7-9C70-A6DFF361A83E" name="current_guests_FK">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 15:43:51 UTC</createdTime>
+<generatorID>1719A260-343A-790C-2BC9-C73DCA675EE0</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C374FD47-4917-9142-00FC-A21C2AE73C98"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

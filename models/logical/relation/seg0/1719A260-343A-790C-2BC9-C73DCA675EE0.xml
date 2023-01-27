@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="reservations" directorySegmentName="seg_0" id="1719A260-343A-790C-2BC9-C73DCA675EE0">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 15:39:26 UTC</createdTime>
+<ownerDesignName>models</ownerDesignName>
+<engineerTo>
+<item key="B5584929-5623-0935-8B47-CBDE2B98366F" value="true"/>
+</engineerTo>
+<sourcePk>20A67575-6E9B-4AEB-2159-A4A5C9A525A7</sourcePk>
+<targetPk>2BFD84AB-FC63-CF20-B663-34769B7D9427</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>8E2670A1-2610-4B6A-7E9A-C46FE6B9CBD7</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>F97B123A-A16C-7A63-31C2-B6817B05E844</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<attribute name="stay length" id="A0796C40-2786-B654-0A41-A1A46744AB77">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 15:47:23 UTC</createdTime>
+<generatorID>B8E54EB5-4944-9BB1-3841-E350C0887560</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<engineerTo>
+<item key="B5584929-5623-0935-8B47-CBDE2B98366F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</attribute>
+</attributes>
+</Relation>

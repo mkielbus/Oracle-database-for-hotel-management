@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EE62653D-1C86-C020-994D-B481818B453F" name="emp_schedule">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:16:25 UTC</createdTime>
+<generatorID>2DC1951F-F43B-2C34-452A-329E56F51BDE</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="shift_id" id="8B3F65FB-2732-851C-F7D2-B209D521BC9F">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:16:25 UTC</createdTime>
+<generatorID>E6BCECB1-A614-EC78-4624-386200928B09</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="shift_date" id="0EDDCE7B-6235-7E66-FD71-CADB02DAE2CF">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:16:25 UTC</createdTime>
+<generatorID>238CAB76-D544-163C-8F0E-72B35815B6AC</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Employees_employee_id" id="305C2290-082A-5908-66EF-9F4E4A8CA385">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:19:23 UTC</createdTime>
+<generatorID>999D1C98-CDCB-1119-7120-26C8DC109695</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7EB33920-D5BD-10F5-8D8A-964A8BD05450" referredColumn="6E0BEE97-DE4E-5E8A-3CC0-1FB94A09EF8D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5F97E25E-0DF8-3956-EDE7-9077D5263844" name="emp_schedule_PK">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:16:25 UTC</createdTime>
+<generatorID>45325FAF-2011-2A46-4F42-A453C16CF30A</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8B3F65FB-2732-851C-F7D2-B209D521BC9F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="628391EF-6655-1134-E6E8-A853A5A95348" name="emp_schedule_Employees_FK">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 14:19:23 UTC</createdTime>
+<generatorID>1FF20A9C-DC07-39AA-AD6D-35B316960597</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="305C2290-082A-5908-66EF-9F4E4A8CA385"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

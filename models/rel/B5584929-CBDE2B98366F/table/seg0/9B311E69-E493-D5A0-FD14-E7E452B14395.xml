@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9B311E69-E493-D5A0-FD14-E7E452B14395" name="guest_service">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 15:43:51 UTC</createdTime>
+<ownerDesignName>models</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="service_id" id="22EFD46E-2A7D-F8EE-2131-749ECF8AA3AC">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 15:43:51 UTC</createdTime>
+<ownerDesignName>models</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F5318BAC-8B00-A47D-C6C8-E943FBDC4302" referredColumn="F01FA302-D26B-E128-3405-6CB1C0A13BF0"/>
+</associations>
+</Column>
+<Column name="guest_id" id="806F699C-DD02-32B0-1DC7-053D2933DB94">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 15:43:51 UTC</createdTime>
+<ownerDesignName>models</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A463504B-D418-AA87-4DBA-5D33BE3016F3" referredColumn="3AE14811-DF6F-0107-312D-FD318BE650F7"/>
+</associations>
+</Column>
+<Column name="quantitiy" id="52023A56-4822-D111-2E3D-C8D8F5782C12">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 15:47:18 UTC</createdTime>
+<ownerDesignName>models</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+<isDependOnFK_AsMandatory>true</isDependOnFK_AsMandatory>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AE3A2446-B850-6928-8702-EF922024E13C" name="guest_service_PK">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 15:43:51 UTC</createdTime>
+<ownerDesignName>models</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="22EFD46E-2A7D-F8EE-2131-749ECF8AA3AC"/>
+<colUsage columnID="806F699C-DD02-32B0-1DC7-053D2933DB94"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C89A232D-2E75-5CDE-ECF5-BE99114C681F" name="extra_service_FK">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 15:43:51 UTC</createdTime>
+<generatorID>0F56737A-628D-A2B4-4EB6-FAFA560C0B63</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="22EFD46E-2A7D-F8EE-2131-749ECF8AA3AC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="19E0A254-CD8E-C39E-C07C-F24F1F9396DA" name="current_guest_FK">
+<createdBy>User</createdBy>
+<createdTime>2023-01-25 15:43:51 UTC</createdTime>
+<generatorID>0F56737A-628D-A2B4-4EB6-FAFA560C0B63</generatorID>
+<ownerDesignName>models</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="806F699C-DD02-32B0-1DC7-053D2933DB94"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

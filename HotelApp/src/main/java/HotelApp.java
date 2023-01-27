@@ -192,7 +192,7 @@ public class HotelApp {
 
     private void calculateCost() throws SQLException{
         String guest_id = this.getIdGuest();
-        PreparedStatement preparedStatement = conn.prepareStatement("select re.stay_length * ro.cost + nvl(g.quantity * es.cost, 0) from reservations re join rooms ro using(room_id) left join guest_service g on(re.guest_id = g.guest_id) left join extra_service es on(es.service_id = g.service_id)  where re.guest_id = ?");
+        PreparedStatement preparedStatement = conn.prepareStatement("select getCostForGuest(?) from dual");
         preparedStatement.setString(1, guest_id);
         ResultSet rs = preparedStatement.executeQuery();
         String cost = "";

@@ -1,13 +1,11 @@
 
-import java.io.FileInputStream;
 import java.io.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Random;
 import java.util.Scanner;
 import oracle.jdbc.pool.OracleDataSource;
-import oracle.jdbc.proxy.annotation.Pre;
+
 
 
 public class HotelApp {
@@ -61,7 +59,8 @@ public class HotelApp {
     public void mainWindow() throws SQLException {
         while(true) {
             System.out.println("--------------------------");
-            System.out.println("Wybierz polecenie wpisując odpowiednią cyfrę: \nWyświetl gości: 1 \nDodaj gościa: 2 \nOblicz koszt pobytu: 3 \nDodaj dodatkową usługę: 4 \nWyświetl roczny budżet: 5 \nDodaj ocenę hotelowi: 6 \nWyświetl listę pracowników: 7, \nWymelduj gościa: 8");
+            System.out.println("Wybierz polecenie wpisując odpowiednią cyfrę: ");
+            System.out.println("Wyświetl gości: 1 \nDodaj gościa: 2 \nOblicz koszt pobytu: 3 \nDodaj dodatkową usługę: 4 \nWyświetl roczny budżet: 5 \nDodaj ocenę hotelowi: 6 \nWyświetl listę pracowników: 7, \nWymelduj gościa: 8");
             Scanner in = new Scanner(System.in);
             String request = in.nextLine();
             System.out.println("Wybrałeś polecenie " + request);

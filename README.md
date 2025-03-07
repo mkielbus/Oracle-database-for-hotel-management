@@ -2,8 +2,8 @@
 
 ## Autorzy
 
-Mateusz Kiełbus
-Alicja Kubiszyn
+Mateusz Kiełbus <br>
+Alicja Kubiszyn <br>
 Sara Fojt
 
 ## Opis
@@ -12,8 +12,8 @@ Projekt polegał na opracowaniu prostej aplikacji wykorzystującej powłokę kon
 
 ## Wymagania
 
-System Linux, dystrybucja Ubuntu 22.04 LTS
-Maven 3.8.8
+System Linux, dystrybucja Ubuntu 22.04 LTS <br>
+Maven 3.8.8 <br>
 Java 21
 
 ## Instalacja własnej instancji bazy danych

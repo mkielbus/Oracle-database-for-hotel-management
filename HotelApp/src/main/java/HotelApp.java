@@ -4,12 +4,33 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
-import oracle.jdbc.pool.OracleDataSource;
+import oracle.jdbc.datasource.impl.OracleDataSource;
 
 
 
 public class HotelApp {
     Connection conn;
+
+    private static boolean checkIfNotNegativeNumber(String text, boolean include_zero) {
+        try {
+            int number = Integer.parseInt(text);
+            if(include_zero)
+                return number >= 0;
+            else
+                return number > 0;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
+    private static boolean checkIfNumber(String text) {
+        try {
+            Integer.parseInt(text);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 
     public static void main(String[] args) {
         HotelApp app = new HotelApp();
@@ -28,11 +49,11 @@ public class HotelApp {
     }
 
     public void setConnection() throws SQLException, IOException {
-        String host = "ora4.ii.pw.edu.pl";
-        String username = "z80";
-        String password = "yh4w5t";
+        String host = "localhost";
+        String username = "system";
+        String password = "password";
         String port = "1521";
-        String serviceName = "pdb1.ii.pw.edu.pl";
+        String serviceName = "oraclePDB";
 
         String connectionString = String.format(
                 "jdbc:oracle:thin:%s/%s@//%s:%s/%s",
@@ -57,11 +78,12 @@ public class HotelApp {
     }
 
     public void mainWindow() throws SQLException {
-        while(true) {
+        Scanner in = new Scanner(System.in);
+        boolean cont = true;
+        while(cont) {
             System.out.println("--------------------------");
             System.out.println("Wybierz polecenie wpisując odpowiednią cyfrę: ");
-            System.out.println("Wyświetl gości: 1 \nDodaj gościa: 2 \nOblicz koszt pobytu: 3 \nDodaj dodatkową usługę: 4 \nWyświetl roczny budżet: 5 \nDodaj ocenę hotelowi: 6 \nWyświetl listę pracowników: 7, \nWymelduj gościa: 8");
-            Scanner in = new Scanner(System.in);
+            System.out.println("Wyświetl gości: 1 \nDodaj gościa: 2 \nOblicz koszt pobytu: 3 \nDodaj dodatkową usługę: 4 \nWyświetl roczny budżet: 5 \nDodaj ocenę hotelowi: 6 \nWyświetl listę pracowników: 7 \nWymelduj gościa: 8\nWyjdź z programu: 9");
             String request = in.nextLine();
             System.out.println("Wybrałeś polecenie " + request);
             switch (request) {
@@ -89,9 +111,11 @@ public class HotelApp {
                 case "8":
                     this.deleteGuest();
                     break;
-
+                default:
+                    cont = false;
             }
         }
+        in.close();
     }
 
     private void deleteGuest() throws SQLException{
@@ -124,6 +148,12 @@ public class HotelApp {
         String guest_id = this.getIdGuest();
         System.out.println("Wystaw ocenę w skali 1-5");
         String review = sc.nextLine();
+        boolean is_correct_number = checkIfNotNegativeNumber(review, false);
+        while(!is_correct_number || Integer.parseInt(review) > 5) {
+            System.out.println("Podaj poprawną ocenę: ");
+            review = sc.nextLine();
+            is_correct_number = checkIfNotNegativeNumber(review, false);
+        }
         ResultSet rs = statement.executeQuery("select max(review_id) + 1 from reviews");
         String review_id = "";
         while (rs.next()) {
@@ -142,6 +172,12 @@ public class HotelApp {
         Scanner sc = new Scanner(System.in);
         System.out.println("Wpisz rok: (od 2020)");
         String year = sc.nextLine();
+        boolean is_correct_number = checkIfNotNegativeNumber(year, false);
+        while(!is_correct_number || Integer.parseInt(year) < 2020) {
+            System.out.println("Podaj poprawny rok: ");
+            year = sc.nextLine();
+            is_correct_number = checkIfNotNegativeNumber(year, false);
+        }
         preparedStatement.setString(1, year);
         ResultSet rs = preparedStatement.executeQuery();
         while(rs.next()){
@@ -156,6 +192,12 @@ public class HotelApp {
         System.out.println("Wpisz numer id gościa:");
         Scanner in = new Scanner(System.in);
         String guest_id = in.nextLine();
+        boolean is_correct_number = checkIfNumber(guest_id);
+        while(!is_correct_number) {
+            System.out.println("Podaj poprawne id: ");
+            guest_id = in.nextLine();
+            is_correct_number = checkIfNumber(guest_id);
+        }
         return guest_id;
     }
 
@@ -178,8 +220,20 @@ public class HotelApp {
         ArrayList<String> listOfWords = new ArrayList<String>(Arrays.asList("usługę", "jej", "SELECT * FROM extra_service", "Numer serwisu: ", ", nazwa: ", ", koszt: " ));
         showList(listOfWords);
         String service_id = scanner.nextLine();
+        boolean is_correct_number = checkIfNumber(service_id);
+        while(!is_correct_number) {
+            System.out.println("Podaj poprawne id: ");
+            service_id = scanner.nextLine();
+            is_correct_number = checkIfNumber(service_id);
+        }
         System.out.println("Wybierz ilość: ");
         String quantity = scanner.nextLine();
+        is_correct_number = checkIfNotNegativeNumber(service_id, false);
+        while(!is_correct_number) {
+            System.out.println("Podaj poprawną ilość: ");
+            quantity = scanner.nextLine();
+            is_correct_number = checkIfNotNegativeNumber(quantity, false);
+        }
         preparedStatement.setString(1, service_id);
         preparedStatement.setString(2, guest_id);
         preparedStatement.setString(3, quantity);
@@ -213,8 +267,20 @@ public class HotelApp {
         ArrayList<String> listOfWords = new ArrayList<String>(Arrays.asList("pokój", "jego", "SELECT * FROM rooms WHERE occupied = 0", "Numer pokoju: ", ", pojemność: ", ", koszt za noc: " ));
         showList(listOfWords);
         String room_id = in.nextLine();
+        boolean is_correct_number = checkIfNotNegativeNumber(room_id, true);
+        while(!is_correct_number) {
+            System.out.println("Podaj poprawny numer pokoju: ");
+            room_id = in.nextLine();
+            is_correct_number = checkIfNotNegativeNumber(room_id, true);
+        }
         System.out.println("Wpisz ilość dni: ");
         String stay_length = in.nextLine();
+        is_correct_number = checkIfNotNegativeNumber(stay_length, false);
+        while(!is_correct_number) {
+            System.out.println("Podaj poprawną ilość dni: ");
+            stay_length = in.nextLine();
+            is_correct_number = checkIfNotNegativeNumber(stay_length, false);
+        }
         PreparedStatement preparedStatement = conn.prepareStatement("INSERT INTO current_guests (guest_id, name, surname) VALUES (?, ?, ?)");
         PreparedStatement preparedStatement1 = conn.prepareStatement("INSERT INTO reservations values (?, ?, ?, ?)");
         ResultSet rs2 = statement.executeQuery("select max(guest_id) + 1 from current_guests");
@@ -237,8 +303,6 @@ public class HotelApp {
         preparedStatement1.setString(4, stay_length);
         int executed2 = preparedStatement1.executeUpdate();
         System.out.println("Dodano gościa");
-
-
 
     }
 
